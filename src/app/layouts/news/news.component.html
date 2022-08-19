@@ -1,0 +1,11 @@
+<div class="layout-news custom-scroll-bar" (scroll)="onScroll($event)">
+  <app-header></app-header>
+
+  <div class="layout-news-body">
+    <router-outlet></router-outlet>
+  </div>
+
+  <app-footer></app-footer>
+</div>
+
+<div id="news-backdrop" class="modal-backdrop fade" (click)="hidden()"></div>

@@ -1,0 +1,33 @@
+<div class="body-bottom">
+  <h2 class="txt__linear txt__fs32">Tin tức Crypto</h2>
+  <div class="grid-card">
+    <ng-container *ngFor="let slide of cryptoNews">
+      <div
+        class="card shadow-sm"
+        [id]="slide._id"
+        (click)="redirectTo(slide.slug)"
+        role="button"
+      >
+        <div class="image">
+          <img
+            class="bd-placeholder-img card-img-top"
+            role="img"
+            [src]="slide.image.light"
+            [alt]="slide.keyword[0]"
+          />
+        </div>
+
+        <div class="card-body">
+          <!-- <small class="txt__linear">Tiền ảo</small> -->
+          <title class="card-text line-clamp txt__title txt__fs18">
+            {{ slide.title }}
+          </title>
+          <small class="line-clamp">{{ slide.description }}</small>
+          <small class="text-muted">{{ createAt(slide.publishDate) }}</small>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- <h5 class="text-center mt-4" role="button">Xem Thêm</h5> -->
+</div>

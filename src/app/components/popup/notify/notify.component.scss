@@ -1,0 +1,47 @@
+.modal {
+  .modal-content {
+    position: relative;
+    width: fit-content;
+    margin: auto;
+    padding: 48px;
+
+    .btn-close {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 48px;
+
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+
+    .input-email {
+      position: relative;
+      max-width: 300px;
+      min-width: fit-content;
+
+      margin: auto;
+      input {
+        height: 48px;
+        border: 1px solid var(--text2);
+        border-radius: 90px;
+        background-color: transparent;
+      }
+      .image {
+        width: 32px;
+        height: 32px;
+        padding: 3px;
+
+        border-radius: 50%;
+        position: absolute;
+        right: 8px;
+        top: 8px;
+      }
+    }
+  }
+}

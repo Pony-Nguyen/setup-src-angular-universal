@@ -1,0 +1,23 @@
+.body-bottom {
+  .grid-card {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+
+    .card {
+      .image {
+        height: 200px;
+      }
+    }
+
+    @media (max-width: 739px) {
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 740px) and (max-width: 1023px) {
+    }
+    @media (min-width: 1024px) {
+    }
+  }
+}

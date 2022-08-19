@@ -1,0 +1,125 @@
+<div class="body">
+  <div class="card-top">
+    <div class="card-top-left">
+      <owl-carousel-o [options]="slider">
+        <ng-container *ngFor="let slide of panoramaNews">
+          <ng-template carouselSlide [id]="slide._id">
+            <div
+              class="card shadow-sm"
+              [routerLink]="'/' + slide.slug"
+              role="button"
+            >
+              <div class="image">
+                <img
+                  class="bd-placeholder-img card-img-top"
+                  role="img"
+                  [src]="slide.image.light"
+                  [alt]="slide.keyword[0]"
+                />
+              </div>
+
+              <div class="card-body">
+                <!-- <small class="txt__linear">Tiền ảo</small> -->
+                <title class="card-text line-clamp txt__title">
+                  {{ slide.title }}
+                </title>
+                <small class="line-clamp">{{ slide.description }}</small>
+                <small class="text-muted">{{
+                  createAt(slide.publishDate)
+                }}</small>
+              </div>
+            </div>
+          </ng-template>
+        </ng-container>
+      </owl-carousel-o>
+    </div>
+
+    <div class="card-top-right custom-scroll-bar">
+      <ng-container *ngFor="let slide of weeklyNews">
+        <div
+          class="card mb-3 shadow-sm d-flex h__f"
+          [id]="slide._id"
+          [routerLink]="slide.slug"
+          role="button"
+        >
+          <div class="image">
+            <img
+              class="img-fluid rounded-start"
+              [src]="slide.image.light"
+              [alt]="slide.keyword[0]"
+            />
+          </div>
+          <div class="card-body">
+            <title class="card-title txt__title txt__fs14 line-clamp mb-0">
+              {{ slide.title }}
+            </title>
+
+            <small class="text-muted">{{ createAt(slide.publishDate) }}</small>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="card-middle">
+    <h2 class="txt__linear txt__fs32">Mới nhất</h2>
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let slide of latestNews">
+        <ng-template carouselSlide [id]="slide._id">
+          <div class="card" [routerLink]="slide.slug" role="button">
+            <div class="image">
+              <img
+                class="bd-placeholder-img card-img-top"
+                role="img"
+                [src]="slide.image.light"
+                [alt]="slide.keyword[0]"
+              />
+            </div>
+
+            <div class="card-body">
+              <!-- <small class="txt__linear txt__overflow">{{
+                slide.description
+              }}</small> -->
+              <title class="card-text line-clamp txt__title txt__fs18">
+                {{ slide.title }}
+              </title>
+              <small class="line-clamp">{{ slide.description }}</small>
+              <small class="text-muted">{{
+                createAt(slide.publishDate)
+              }}</small>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div>
+  <!-- <div class="card-middle">
+    <h2 class="txt__linear txt__fs32">Mới nhất</h2>
+    <owl-carousel-o [options]="customOptions">
+      <ng-container *ngFor="let slide of news">
+        <ng-template carouselSlide [id]="slide.id">
+          <div class="card">
+            <div class="image">
+              <img
+                class="bd-placeholder-img card-img-top"
+                role="img"
+                src="https://www.freepik.com/premium-photo/astronaut-outer-open-space-planet-earth-stars-provide-background-erforming-space-planet-earth-sunrise-sunset-our-home-iss-elements-this-image-furnished-by-nasa_22483456.htm"
+                alt=""
+              />
+            </div>
+
+            <div class="card-body">
+              <small class="txt__linear">Tiền ảo</small>
+              <title class="card-text line-clamp txt__title txt__fs18">
+                {{ slide.title }}
+              </title>
+              <small class="text-muted">9 mins</small>
+            </div>
+          </div>
+        </ng-template>
+      </ng-container>
+    </owl-carousel-o>
+  </div> -->
+</div>
+
+<app-notify></app-notify>

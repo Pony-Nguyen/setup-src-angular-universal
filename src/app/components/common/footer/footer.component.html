@@ -1,0 +1,75 @@
+<footer class="py-5">
+  <div class="footer size-page">
+    <div class="footer-top pt-3 pb-5">
+      <div>
+        <div class="flex-center mr-auto" routerLink="/" role="button">
+          <div class="image"><img src="assets/svgs/Logo.svg" alt="" /></div>
+          <h1 class="txt__fs24 txt__we800 mb-0">Kampfire</h1>
+        </div>
+        <br />
+        <h5>
+          Tin tức Crypto <br />
+          mới nhất
+        </h5>
+      </div>
+
+      <div>
+        <h5>Kampfire</h5>
+        <br />
+        <ul class="nav nav-k flex-column">
+          <ng-container *ngFor="let col of col1s">
+            <li class="nav-item">
+              <a href="#" class="nav-link p-0 text-muted txt__header">{{
+                col.title
+              }}</a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+
+      <div>
+        <h5>Truyền thông</h5>
+        <br />
+        <ul class="nav">
+          <ng-container *ngFor="let col of col2s">
+            <li class="nav-item mr-2 col2">
+              <a href="#" class="nav-link p-0 text-muted">
+                <div class="image">
+                  <img [src]="col.icon" alt="icon social" />
+                </div>
+              </a>
+            </li>
+          </ng-container>
+        </ul>
+      </div>
+
+      <div>
+        <form>
+          <h5>Nhận tin tức</h5>
+          <br />
+          <p class="txt__fs14">
+            Đăng ký nhận bản tin để có thông tin mới nhất về thị trường crypto.
+          </p>
+          <div class="input-email w-100">
+            <label for="newsletter1" class="visually-hidden"
+              >Nhập email của bạn</label
+            >
+            <input
+              id="newsletter1"
+              type="text"
+              class="form-control"
+              placeholder="Nhập email của bạn"
+            />
+            <div class="image bg__orange" role="button">
+              <img src="assets/svgs/Line.svg" alt="icon line" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="mt-5 text-center text-muted">
+      <p>Copyright © 2021 Sakugen LLC. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

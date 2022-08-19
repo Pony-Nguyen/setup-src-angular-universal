@@ -1,0 +1,27 @@
+<div class="slider">
+  <h2 class="text-center txt__fs32 txt__ffme mb-4">Kiếm tiền</h2>
+  <owl-carousel-o [options]="customOptions">
+    <ng-container *ngFor="let slide of earnNews">
+      <ng-template carouselSlide [id]="slide._id">
+        <div class="card" [routerLink]="slide.slug" role="button">
+          <div class="image">
+            <img
+              class="bd-placeholder-img card-img-top"
+              role="img"
+              [src]="slide.image.light"
+              [alt]="slide.keyword[0]"
+            />
+          </div>
+
+          <div class="card-body">
+            <title
+              class="card-text line-clamp txt__fs24 txt__we700 txt__overflow"
+            >
+              {{ slide.title }}
+            </title>
+          </div>
+        </div>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</div>
